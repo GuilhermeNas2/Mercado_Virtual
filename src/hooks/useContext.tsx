@@ -3,17 +3,22 @@ import { createContext, useState } from "react";
 interface FilmProps {
     results: [ {
         id: string,
-        thumbnail: string,        
+        thumbnail: string, 
+        price: number,       
     },        
 ],
     length: number,
-    map: any,
+    map: object[],
+    filter: object[],
 }
 
 interface ContextProps {  
     items: FilmProps | null ;
     setItems: (items : FilmProps) => void;  
-   
+    open: boolean;
+    setOpen: (open: boolean) => void;
+    buyItem: FilmProps
+    setBuyItem: (buyItem: object[]) => void;
 }
 
 type ChildrenProps = {
@@ -23,30 +28,30 @@ type ChildrenProps = {
 export const MercadoContext = createContext({} as ContextProps );
 
 export const MercadoProvider = ({children}: ChildrenProps) => {
-    const [items, setItems] = useState<FilmProps | null>(null)
+
+    const [items, setItems] = useState<FilmProps | null>(null);
+    const [open, setOpen] = useState(false);
+    const [buyItem, setBuyItem] = useState([]);
+    
+
+    const valores = {
+        items,
+        setItems,
+        open,
+        setOpen,
+        buyItem,
+        setBuyItem       
+    }        
 
     return (
-        <MercadoContext.Provider value={{ items, setItems }}>
+        <MercadoContext.Provider value={valores}>
             {children}
         </MercadoContext.Provider>
-    )
+    )    
+
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
-export const useGloblaContext = ( ) => {
 
-    const [items, setItems] = useState<FilmProps | null>(null)  
-    
-    const fetchApi = async (query : string) => {
-        const response = await fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${query}`)
-        const data = await response.json()
-        return data.results
-      }  
 
-      return{
-        items,
-        setItems,  
-        fetchApi     
-    }
-}
+
 
