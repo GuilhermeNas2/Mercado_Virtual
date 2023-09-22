@@ -5,11 +5,13 @@ interface FilmProps {
         id: string,
         thumbnail: string, 
         price: number,       
-    },        
-],
+    },   
+   
+],    
     length: number,
-    map: object[],
-    filter: object[],
+    map: any,
+    filter: any,
+    reduce: any,
 }
 
 interface ContextProps {  
@@ -17,8 +19,10 @@ interface ContextProps {
     setItems: (items : FilmProps) => void;  
     open: boolean;
     setOpen: (open: boolean) => void;
-    buyItem: FilmProps
-    setBuyItem: (buyItem: object[]) => void;
+    buyItem: FilmProps | object[];
+    setBuyItem: (buyItem: FilmProps) => void;
+ 
+   
 }
 
 type ChildrenProps = {
@@ -31,7 +35,7 @@ export const MercadoProvider = ({children}: ChildrenProps) => {
 
     const [items, setItems] = useState<FilmProps | null>(null);
     const [open, setOpen] = useState(false);
-    const [buyItem, setBuyItem] = useState([]);
+    const [buyItem, setBuyItem] = useState<FilmProps | object[]>([]);  
     
 
     const valores = {
@@ -40,7 +44,8 @@ export const MercadoProvider = ({children}: ChildrenProps) => {
         open,
         setOpen,
         buyItem,
-        setBuyItem       
+        setBuyItem ,
+                   
     }        
 
     return (

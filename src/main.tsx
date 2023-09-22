@@ -6,6 +6,7 @@ import { MercadoProvider} from './hooks/useContext.tsx'
 import {createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ItemPage from './screens/Item/item.tsx'
 import HomePage from './screens/home/home.tsx'
+import LoginScreen from './screens/login/login.tsx'
 
 
 const route = createBrowserRouter([
@@ -20,6 +21,10 @@ const route = createBrowserRouter([
       {
         path:'/promoçoes',
         element:<ItemPage/>
+      },
+      {
+        path:'/login',
+        element:<LoginScreen/>
       }
     ]    
   }
