@@ -19,23 +19,23 @@ const route = createBrowserRouter([
     element:<App/>,
     children: [
       {
-        path:'/home',
+        path:'Mercado_Virtual/home',
         element:<HomePage/>
       },
       {
-        path:'/promoçoes',
+        path:'Mercado_Virtual/promoçoes',
         element:<ItemPage/>
       },
       {
-        path:'/login',
+        path:'Mercado_Virtual/login',
         element:<LoginScreen/>,
         children: [
           {
-            path:'/login',
+            path:'Mercado_Virtual/login',
             element:<LoginScreenInit/>
           },
           {
-            path:'/login/cadastro',
+            path:'Mercado_Virtual/login/cadastro',
             element:<CadastroScreen/>
           }
         ]
