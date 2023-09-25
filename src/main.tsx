@@ -2,11 +2,15 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
+
 import { MercadoProvider} from './hooks/useContext.tsx'
 import {createBrowserRouter, RouterProvider } from 'react-router-dom'
+
 import ItemPage from './screens/Item/item.tsx'
 import HomePage from './screens/home/home.tsx'
 import LoginScreen from './screens/login/login.tsx'
+import LoginScreenInit from './screens/login/loginscreen.tsx'
+import CadastroScreen from './screens/login/cadastro.tsx'
 
 
 const route = createBrowserRouter([
@@ -24,7 +28,17 @@ const route = createBrowserRouter([
       },
       {
         path:'/login',
-        element:<LoginScreen/>
+        element:<LoginScreen/>,
+        children: [
+          {
+            path:'/login',
+            element:<LoginScreenInit/>
+          },
+          {
+            path:'/login/cadastro',
+            element:<CadastroScreen/>
+          }
+        ]
       }
     ]    
   }

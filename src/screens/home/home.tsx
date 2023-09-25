@@ -9,25 +9,21 @@ import LoadingComp from "../../components/loading/loading"
 
 const HomePage = () => {   
 
-    const {setItems, items } = useContext(MercadoContext) 
-    
-    const [searchParams] = useSearchParams()
-    const query = searchParams.get('query')    
+    const {setItems, items } = useContext(MercadoContext);    
+    const [searchParams] = useSearchParams();
+    const query = searchParams.get('query');  
 
     useEffect(()=> {
      fetchApi('cadeira').then((response) => {
        setItems(response)
      })
-    }, [query])  
-    
-    
-
+    }, []); 
 
     return(
       <div>
         <h2 className="text-center font-semibold text-lg ">Resultado para {query}</h2>
           <div className="flex mt-10 h-2/4 w-full" >     
-            <section className="w-2/4 max-w-lg border-r p-2">  
+            <section className="w-2/4 max-w-md border-r p-2">  
             <h2>Filtros</h2>        
                 <ol>
                   <ol>
@@ -47,7 +43,7 @@ const HomePage = () => {
               {
                 items?.length ? 
                 (<div className="flex flex-wrap justify-center max-w-2/5 min-w-md gap-2 p-5 box-border">
-                  {items.map((product) => <CartItem key={product.id} data={product}  />)}</div>) : <LoadingComp/>   
+                  {items.map((product) => <CartItem key={product.id} data={product} />)}</div>) : <LoadingComp/>   
               }    
               <ShopBar/>   
           </div>

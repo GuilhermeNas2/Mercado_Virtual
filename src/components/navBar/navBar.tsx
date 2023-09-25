@@ -32,7 +32,11 @@ const NavBar = () => {
         <div>
         <nav className="bg-yellow-200 w-full h-20 flex justify-around items-center p-3">
           <div className="w-1/2 h-1/3 pb-2 flex justify-between items-center">
-            <Link to={'/home'} className="w-1/4 min-w-min"><img src="/logo.svg"  alt="" /></Link>
+            <Link to={'/home'} className="w-1/4 min-w-min">
+              <img className="sm:w-36 md:w-38 lg:w-40 h-9 " 
+               src="/logo.svg" 
+               alt="Logo da empresa" />
+            </Link>
             <form className="w-1/2"
             onSubmit={handleSubmit}>
               <label      
@@ -45,19 +49,18 @@ const NavBar = () => {
                   type="search" />  
                   <button 
                   type="submit"
-                  className="border-l-2 px-4"><AiOutlineSearch/></button>
-                  
+                  className="border-l-2 px-4"
+                  title="search"><AiOutlineSearch/></button>                  
               </label>  
             </form>
           </div>                 
           <ul className="flex md:w-1/4 w-1/3 justify-around box-border md:text-lg text-xs">
-            <Link to={'/promoçoes'}>Promoções</Link>
-            <Link to={'/home'}>Inicio</Link>
-            <Link to={'/login'}>Login</Link>
-            <div className="relative">
+           <li><Link to={'/promoçoes'}>Promoções</Link></li> 
+           <li><Link to={'/home'}>Inicio</Link></li> 
+           <li><Link to={'/login'}>Login</Link></li> 
+           <div className="relative">
             <i className="md:text-3xl text-bs " onClick={leftBarOpen}><AiOutlineShoppingCart/></i>            
-            </div>
-            
+           </div>            
           </ul>
         </nav>
       </div>      
