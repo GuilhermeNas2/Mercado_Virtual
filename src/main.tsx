@@ -15,7 +15,7 @@ import CadastroScreen from './screens/login/cadastro.tsx'
 
 const route = createBrowserRouter([
   {
-    path:'/',
+    path:'Mercado_Virtual/',
     element:<App/>,
     children: [
       {
