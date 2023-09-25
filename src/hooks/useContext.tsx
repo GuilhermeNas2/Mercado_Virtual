@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 
 interface FilmProps {
-    results: [ {
+    results?: [ {
         id: string,
         thumbnail: string, 
         price: number,       

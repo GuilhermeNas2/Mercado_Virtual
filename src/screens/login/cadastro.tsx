@@ -25,7 +25,7 @@ const CadastroScreen = () => {
 
     const navigate = useNavigate();
 
-    const handleLogin = (data) => {
+    const handleLogin = ({data}:any) => {
         if(errors.nome || errors.password){
             return
         } 

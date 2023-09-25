@@ -3,15 +3,13 @@ import { MercadoContext } from '../../hooks/useContext'
 import { useContext } from "react";
 import formatCurrency from '../../utils/formatCurrency';
 
-const CartItem = ({data}) => {  
+const CartItem = ({data}: any) => {  
   
-  const {setBuyItem, buyItem} = useContext(MercadoContext);
-  const {title, thumbnail, price} = data;
-
- 
+  const {setBuyItem} = useContext(MercadoContext);
+  const {title, thumbnail, price} = data; 
 
   const addItemList = () => {
-    setBuyItem([ ...buyItem , data])    
+    setBuyItem([ data])   
   };   
 
     return (            

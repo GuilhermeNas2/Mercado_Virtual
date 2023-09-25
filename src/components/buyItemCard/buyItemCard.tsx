@@ -3,13 +3,13 @@ import { MercadoContext } from "../../hooks/useContext"
 import {useContext } from "react"
 import formatCurrency from "../../utils/formatCurrency";
 
-const CartItemCard = ({data}) => {
+const CartItemCard = ({data}: any) => {
 
     const {buyItem, setBuyItem} = useContext(MercadoContext);
     const {thumbnail, id, price, title} = data;
 
     const excludeItem = () => {
-        const updatedList = buyItem.filter((item) => item.id != id)
+        const updatedList = buyItem.filter(({item}:any) => item.id != id)
         setBuyItem(updatedList)
     };
 

@@ -12,7 +12,7 @@ const ShopBar = () => {
         setOpen(false)
     };    
 
-    const total = buyItem?.reduce((acc, item) => item.price + acc, 0)
+    const total = buyItem?.reduce(({acc, item}:any) => item.price + acc, 0)
 
    
 
@@ -21,7 +21,7 @@ const ShopBar = () => {
             <i onClick={handleClose} className='text-2xl'><AiOutlineArrowLeft/></i>
             <div className='h-3/4 mb-10'>
                 {
-                    buyItem?.length > 0 && (buyItem.map((buyItem) => <CartItemCard key={buyItem.id} data={buyItem}/>))
+                    buyItem?.length > 0 && (buyItem.map(({buyItem}:any) => <CartItemCard key={buyItem.id} data={buyItem}/>))
                 }
             </div >
             <div className='h-1/4 border-t-2 border-black p-2'>

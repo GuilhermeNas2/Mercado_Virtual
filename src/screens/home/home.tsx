@@ -43,7 +43,7 @@ const HomePage = () => {
               {
                 items?.length ? 
                 (<div className="flex flex-wrap justify-center max-w-2/5 min-w-md gap-2 p-5 box-border">
-                  {items.map((product) => <CartItem key={product.id} data={product} />)}</div>) : <LoadingComp/>   
+                  {items.map(({product} : any) => <CartItem key={product.id} data={product} />)}</div>) : <LoadingComp/>   
               }    
               <ShopBar/>   
           </div>
