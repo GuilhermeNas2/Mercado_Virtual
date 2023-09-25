@@ -15,27 +15,27 @@ import CadastroScreen from './screens/login/cadastro.tsx'
 
 const route = createHashRouter([
   {
-    path:'Mercado_Virtual/',
+    path:'/Mercado_Virtual/',
     element:<App/>,
     children: [
       {
-        path:'Mercado_Virtual//home',
+        path:'/Mercado_Virtual/home',
         element:<HomePage/>
       },
       {
-        path:'Mercado_Virtual/promoçoes',
+        path:'/Mercado_Virtual/promoçoes',
         element:<ItemPage/>
       },
       {
-        path:'Mercado_Virtual/login',
+        path:'/Mercado_Virtual/login',
         element:<LoginScreen/>,
         children: [
           {
-            path:'Mercado_Virtual/login',
+            path:'/Mercado_Virtual/login',
             element:<LoginScreenInit/>
           },
           {
-            path:'Mercado_Virtual/login/cadastro',
+            path:'/Mercado_Virtual/login/cadastro',
             element:<CadastroScreen/>
           }
         ]
