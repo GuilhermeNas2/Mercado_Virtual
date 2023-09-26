@@ -4,7 +4,7 @@ import App from './App.tsx'
 import './index.css'
 
 import { MercadoProvider} from './hooks/useContext.tsx'
-import {createHashRouter, RouterProvider } from 'react-router-dom'
+import {createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import ItemPage from './screens/Item/item.tsx'
 import HomePage from './screens/home/home.tsx'
@@ -13,29 +13,29 @@ import LoginScreenInit from './screens/login/loginscreen.tsx'
 import CadastroScreen from './screens/login/cadastro.tsx'
 
 
-const route = createHashRouter([
+const route = createBrowserRouter([
   {
-    path:'Mercado_Virtual/',
+    path:'/',
     element:<App/>,
     children: [
       {
-        path:'Mercado_Virtual/home',
+        path:'/home',
         element:<HomePage/>
       },
       {
-        path:'Mercado_Virtual/promoçoes',
+        path:'/promoçoes',
         element:<ItemPage/>
       },
       {
-        path:'Mercado_Virtual/login',
+        path:'/login',
         element:<LoginScreen/>,
         children: [
           {
-            path:'Mercado_Virtual/login',
+            path:'/login',
             element:<LoginScreenInit/>
           },
           {
-            path:'Mercado_Virtual/login/cadastro',
+            path:'/login/cadastro',
             element:<CadastroScreen/>
           }
         ]
