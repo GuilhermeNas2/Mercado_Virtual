@@ -4,7 +4,7 @@ import App from './App.tsx'
 import './index.css'
 
 import { MercadoProvider} from './hooks/useContext.tsx'
-import {createBrowserRouter, RouterProvider } from 'react-router-dom'
+import {Routes, BrowserRouter as Router, Route } from 'react-router-dom'
 
 import ItemPage from './screens/Item/item.tsx'
 import HomePage from './screens/home/home.tsx'
@@ -47,7 +47,16 @@ const route = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <MercadoProvider>
-      <RouterProvider router={route} />
+      <Router>
+        <Routes>
+          <Route path='/' element={<App/>} />
+          <Route path='/home' element={<HomePage/>} />
+          <Route path='/promoçoes' element={<ItemPage/>} />
+          <Route path='/login' element={<LoginScreen/>} />
+          <Route path='/login' element={<LoginScreenInit/>} />
+          <Route path='/login/cadastro ' element={<CadastroScreen/>} />
+        </Routes>
+      </Router>
     </MercadoProvider>
   </React.StrictMode>,
 )
