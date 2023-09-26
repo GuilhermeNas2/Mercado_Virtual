@@ -17,8 +17,22 @@ const router = createBrowserRouter([
         element:<HomePage/>
       },
       {
+        path:'/promoçoes',
+        element:<ItemPage/>
+      },
+      {
         path:'/login',
-        element:<LoginScreen/>
+        element:<LoginScreen/>,
+        children:[
+          {
+            path:'/login',
+            element:<LoginScreenInit/>
+          },
+          {
+            path:'/cadastro',
+            element:<CadastroScreen/>
+          }
+        ]
       }
     ]
   }
