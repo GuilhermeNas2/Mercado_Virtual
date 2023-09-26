@@ -1,62 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
+
 import './index.css'
 
 import { MercadoProvider} from './hooks/useContext.tsx'
-import {Routes, BrowserRouter as Router, Route } from 'react-router-dom'
-
-import ItemPage from './screens/Item/item.tsx'
-import HomePage from './screens/home/home.tsx'
-import LoginScreen from './screens/login/login.tsx'
-import LoginScreenInit from './screens/login/loginscreen.tsx'
-import CadastroScreen from './screens/login/cadastro.tsx'
+import AppRoutes from './AppRoutes.tsx'
 
 
-const route = createBrowserRouter([
-  {
-    path:'/',
-    element:<App/>,
-    children: [
-      {
-        path:'/home',
-        element:<HomePage/>
-      },
-      {
-        path:'/promoçoes',
-        element:<ItemPage/>
-      },
-      {
-        path:'/login',
-        element:<LoginScreen/>,
-        children: [
-          {
-            path:'/login',
-            element:<LoginScreenInit/>
-          },
-          {
-            path:'/login/cadastro',
-            element:<CadastroScreen/>
-          }
-        ]
-      }
-    ]    
-  }
-])
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <MercadoProvider>
-      <Router>
-        <Routes>
-          <Route path='/' element={<App/>} />
-          <Route path='/home' element={<HomePage/>} />
-          <Route path='/promoçoes' element={<ItemPage/>} />
-          <Route path='/login' element={<LoginScreen/>} />
-          <Route path='/login' element={<LoginScreenInit/>} />
-          <Route path='/login/cadastro ' element={<CadastroScreen/>} />
-        </Routes>
-      </Router>
+      <AppRoutes/>
     </MercadoProvider>
   </React.StrictMode>,
 )
