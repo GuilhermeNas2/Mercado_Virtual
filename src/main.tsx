@@ -15,27 +15,27 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 const router = createBrowserRouter([
   {
-    path:'/',
+    path:'Mercado_Virtual/',
     element:<App/>,
     children:[
       {
-        path:'/home',
+        path:'Mercado_Virtual/home',
         element:<HomePage/>
       },
       {
-        path:'/promoçoes',
+        path:'Mercado_Virtual/promoçoes',
         element:<ItemPage/>
       },
       {
-        path:'/login',
+        path:'Mercado_Virtual/login',
         element:<LoginScreen/>,
         children:[
           {
-            path:'/login',
+            path:'Mercado_Virtual/login',
             element:<LoginScreenInit/>
           },
           {
-            path:'/cadastro',
+            path:'Mercado_Virtual/cadastro',
             element:<CadastroScreen/>
           }
         ]
