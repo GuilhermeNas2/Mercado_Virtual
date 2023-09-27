@@ -1,25 +1,13 @@
-import { Outlet } from 'react-router-dom';
-
 
 import './login.css'
 
+
+
+
+
     
 
-    
-
-const LoginScreen = () => {
-
-   
-
-
-    // const [output, setOutput] = useState('');
-
-   
-
-    // const loginSubmit = (data: any) => {
-    //     setOutput(JSON.stringify(data, null,2))
-    // };
-
+const LoginScreen = () => {  
 
     return(        
         <div className="container-main">
@@ -31,7 +19,7 @@ const LoginScreen = () => {
                   </div>    
             </div>
             <div className="w-1/2 h-screen flex flex-col p-2 justify-center gap-10 items-center shadow-2xl bg-yellow-100 ">
-                <Outlet/>                
+                                
             </div>
         </div>
     )

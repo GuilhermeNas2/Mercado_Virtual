@@ -59,7 +59,7 @@ const LoginScreenInit =  () => {
                     {errors && <span>{errors.password?.message}</span>}                    
                     <ButtonForm text='Login'/>
                 </form>
-                <Link to={'/login/cadastro'}>Não tem cadastro ainda ?</Link>
+                <Link to={'Mercado_Virtual/login/cadastro'}>Não tem cadastro ainda ?</Link>
         </>
     )
   

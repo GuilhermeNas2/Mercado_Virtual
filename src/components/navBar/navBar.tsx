@@ -55,9 +55,9 @@ const NavBar = () => {
             </form>
           </div>                 
           <ul className="flex md:w-1/4 w-1/3 justify-around box-border md:text-lg text-xs">
-           <li><Link to={'/promoçoes'}>Promoções</Link></li> 
-           <li><Link to={'/home'}>Inicio</Link></li> 
-           <li><Link to={'/login'}>Login</Link></li> 
+           <li><Link to={'Mercado_Virtual/promoçoes'}>Promoções</Link></li> 
+           <li><Link to={'Mercado_Virtual/home'}>Inicio</Link></li> 
+           <li><Link to={'Mercado_Virtual/login'}>Login</Link></li> 
            <div className="relative">
             <i className="md:text-3xl text-bs " onClick={leftBarOpen}><AiOutlineShoppingCart/></i>            
            </div>            
